@@ -1,0 +1,40 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "secret": "196b6e5f3b6813a04bf4c800ab6fbd1c54fc7c14d082e979964cf777ba0b14d2719bf56a9e842144393522c358524002d05da5cde5e96a15d903bcea2b476dba524b6a31b53d3e9656a312a27421f27f96d09efb89652db009e294974d91d458319c0530853397ebc8d6c54ddd9bea1563a5910cbe45335569fc1c5fc09cf7d51e701b7b241502337319ceb6cdb06a2616852e61f78288cd8176c5c002cc465daa8d3c4c87046ea824cc3a02e0b94e0eca95311b70dff1a873ffc83d2e9b95c100621fc9ecd29fcfac09f94eb18ce7d864e6725a37a9d2deafa35688c9cd424d5b3cd9c3cd99938914f0aa0a94f1657dfae6cced907a8b3818e51e55c5666a08",
+    "strategies": [
+      "jwt"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "type": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "auth0": {
+      "clientID": "your auth0 client id",
+      "clientSecret": "your auth0 client secret",
+      "successRedirect": "/",
+      "domain": "mydomain.auth0.com"
+    },
+    "cookie": {
+      "enabled": true,
+      "name": "feathers-jwt",
+      "httpOnly": false,
+      "secure": false
+    }
+  },
+  "mongodb": "mongodb://localhost:27017/open_source_universe"
+}
