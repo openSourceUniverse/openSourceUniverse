@@ -1,6 +1,6 @@
-# open-source-universe
+# open_source_universe
 
-> Improve your coding skill with open source projects
+> This  is the back end and core logic for the Opensource Universe Project
 
 ## About
 
@@ -14,7 +14,7 @@ Getting up and running is as easy as 1, 2, 3.
 2. Install your dependencies
 
     ```
-    cd path/to/open-source-universe; npm install
+    cd path/to/open_source_universe; npm install
     ```
 
 3. Start your app
