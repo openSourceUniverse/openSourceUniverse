@@ -6,5 +6,29 @@
     "default": 10,
     "max": 50
   },
-  "mongodb": "mongodb://localhost:27017/open_source_universe"
+  "mongodb": "mongodb://localhost:27017/open_source_universe",
+  "authentication": {
+    "secret": "038faaea13e924079931dc2fcc127f45c3f9743da9e617d800b5923ffe93ce78f6b4aea855d812973b456ddd62922c5e121ade3edeb84da827c346a03079681efdafbba54744af3812b8970dcbfb916662a099b549a2d1ceb88104230ceb9c0bc74857ec28e5a3099d906c66ab18f6447060f33c79263c336bd2bcb23cf7f3752f8b70a67d4ab5e5d0f0a744e5f2564baaf3fa553aa480575d201044625eb9af3e2f16b396730364b7360ad7f4b1e01d1f52593976b76fed2b275466adc29e402c0be5f6c65c14d6fe7db679d2ef4c81a0daf75a5f50051593317332d24d602ffd0e4c18d19b5cc281fa3af80affdeba9b68876e8b947279919e4f5e80d28c1f",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "type": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  }
 }
