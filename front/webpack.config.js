@@ -33,6 +33,25 @@ const assets = () => () => ({
   },
 })
 
+const css = () => () => ({
+ module: {
+      loaders: [
+         {
+  test: /\.css$/,
+  loader: 'style-loader'
+   }, {
+  test: /\.css$/,
+  loader: 'css-loader',
+  query: {
+    modules: true,
+    localIdentName: '[name]__[local]___[hash:base64:5]'
+  }
+}
+      ],
+   },
+})
+
+
 const resolveModules = modules => () => ({
   resolve: {
     modules: [].concat(modules, ['node_modules']),
@@ -63,6 +82,7 @@ const config = createConfig([
     babel(),
   ]),
   assets(),
+  css(),
   resolveModules(sourceDir),
 
   env('development', [

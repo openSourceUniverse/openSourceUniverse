@@ -1,9 +1,12 @@
 // https://github.com/diegohaz/arc/wiki/Atomic-Design
 import React from 'react'
+import AppBar from './AppBar'
 
 const HomePage = () => {
   return (
-    <div>Hello World</div>
+    <div>
+    	<AppBar/>
+    </div>
   )
 }
 
